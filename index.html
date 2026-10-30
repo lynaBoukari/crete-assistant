@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Crête · Assistant ski de randonnée</title>
+<meta name="description" content="Démonstrateur MeLya : assistant de conseil en skis de randonnée avec règles métier, recommandations sourcées et renvoi vers un guide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="banner"><div class="wrap"><b>Démonstrateur MeLya</b><span>Projet personnel. La boutique, les skis, les prix, les avis et les créneaux sont fictifs.</span></div></div>
+
+<header class="shop"><div class="wrap">
+  <div class="brand"><svg viewBox="0 0 28 20" aria-hidden="true"><path d="M1 19 L10 5 L15 12 L19 7 L27 19 Z" fill="var(--navy)"/><path d="M10 5 L12.5 9 L10.8 8.2 L9.2 9.6 L7.8 8.4 Z" fill="var(--surface)"/></svg>Crête <span>· Ski de randonnée</span></div>
+  <nav class="nav" aria-label="Boutique fictive"><span>Skis</span><span>Paiement en 12 fois sans frais</span><span>Conseil guide</span></nav>
+</div></header>
+
+<main class="wrap">
+  <section class="intro">
+    <h1>Le bon ski de randonnée pour votre niveau et vos sorties</h1>
+    <p>L’assistant pose quelques questions, ne propose que des skis adaptés à votre niveau et à votre taille, cite ses sources, et vous oriente vers un guide de haute montagne quand votre projet le justifie.</p>
+    <div class="scenarios" role="group" aria-label="Choisir un scénario de démonstration">
+      <span class="lbl">Démo guidée</span>
+      <button class="scn" id="scn-a" data-scn="a" aria-pressed="true">Débutant en rando</button>
+      <button class="scn" id="scn-b" data-scn="b" aria-pressed="false">Skieur qui veut s’engager</button>
+      <button class="scn" id="scn-libre" data-scn="libre" aria-pressed="false">Parcours libre</button>
+    </div>
+  </section>
+
+  <div class="layout">
+    <section class="chat" aria-label="Assistant de conseil">
+      <div class="chat-head">
+        <div class="who">
+          <div class="avatar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 19 L9 7 L13 13 L16 9 L22 19 Z" fill="#FF8A5C"/><path d="M9 7 L10.8 10 L9.5 9.4 L8.3 10.4 L7.3 9.5 Z" fill="#F3F7FA"/></svg></div>
+          <div><strong>Assistant Crête</strong><small>Conseil sourcé · guide sur demande</small></div>
+        </div>
+        <button class="reset" id="reset">Recommencer</button>
+      </div>
+      <div class="log" id="log" aria-live="polite"></div>
+      <div class="replies" id="replies"></div>
+    </section>
+
+    <aside class="side">
+      <section class="panel">
+        <h2>Vue coulisses</h2>
+        <p>Ce que le système fait à chaque étape. Le client de la boutique ne voit pas ce panneau.</p>
+        <div class="funnel" id="funnel" hidden></div>
+        <ol class="trace" id="trace"><li class="empty">Les règles et filtres appliqués s’afficheront ici.</li></ol>
+      </section>
+      <p class="legal">Démonstrateur développé par MeLya : assistant de conseil produit avec règles métier, recommandations sourcées et renvoi vers un expert humain.</p>
+    </aside>
+  </div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
